@@ -5,6 +5,7 @@ class Header extends Component {
         return (
             <div>
             <h1>Header</h1>
+            {this.props.children}
             </div>
         );
     }
