@@ -37,7 +37,7 @@ export function fetchNewsletterArchive() {
     }
 }
 
-export function fetchNewsletterById() {
+export function fetchNewsletterById(_id) {
     return ( 
         {
             type: FETCH_NEWSLETTER_BY_ID,

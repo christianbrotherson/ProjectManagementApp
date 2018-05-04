@@ -4,8 +4,8 @@ import * as actions from '../../actions';
 
 class NewsletterDetail extends Component {
 
-    componentDidMount() {
-        // this.props.fetchItemById()
+    componentDidMount() {        
+        this.props.fetchNewsletterById(this.props.match.params._id)
     }
 
     render() {
@@ -19,8 +19,10 @@ class NewsletterDetail extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log(state.newsletter.fetchedItem);
+        
     return {
-        fetchedItem: state.fetchedItem
+        fetchedItem: state.newsletter.fetchedItem
     }
 }
 
