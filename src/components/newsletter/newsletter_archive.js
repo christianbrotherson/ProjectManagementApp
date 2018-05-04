@@ -20,15 +20,11 @@ class NewsletterArchive extends Component {
     }
 
     renderNewsletterArchiveList = function() {
-
-
         if (this.props.archive) {
             this.props.archive.map((item, index) => {
                 this.items.push(this.renderNewsletterArchiveItem(item, index))
             })
         }
-
-
     }
 
     render() {
