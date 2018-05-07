@@ -23,6 +23,11 @@ import NewsletterDetail from './components/newsletter/newsletter_detail';
 import EditNewsletter from './components/newsletter/newsletter_edit';
 import AddNewsletter from './components/newsletter/newsletter_add';
 
+import SupportRequest from './components/supportRequest/support_request';
+import SupportRequestDetail from './components/supportRequest/support_request_detail';
+import EditSupportRequest from './components/supportRequest/support_request_edit';
+import AddSupportRequest from './components/supportRequest/support_request_add';
+
 function main() {
     ReactDOM.render(
         <Provider store={createStoreWithMiddleware(reducers)}>
@@ -37,6 +42,11 @@ function main() {
                         <Route path="/newsletter/detail/:_id" component={NewsletterDetail}></Route>
                         <Route path="/newsletter/edit/:_id" component={EditNewsletter}></Route>
                         <Route path="/newsletter/add" component={AddNewsletter}></Route>
+
+                        <Route path="/support-request" exact component={SupportRequest}></Route>
+                        <Route path="/support-request/detail/:_id" component={SupportRequestDetail}></Route>
+                        <Route path="/support-request/edit/:_id" component={EditSupportRequest}></Route>
+                        <Route path="/support-request/add" component={AddSupportRequest}></Route>
                         
                     </Switch>
                 </Header>

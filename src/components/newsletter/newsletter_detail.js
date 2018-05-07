@@ -36,10 +36,10 @@ class NewsletterDetail extends Component {
                 </div>
                 <div className="col-md-9">
                     {this.renderFetchedItem()}
+                    <Link to={`/newsletter/edit/${this.props.fetchedItem._id}`}>
+                        <div>Edit Newsletter</div>
+                    </Link>
                 </div>
-                <Link to={`/newsletter/edit/${this.props.fetchedItem._id}`}>
-                    <div>Edit Newsletter</div>
-                </Link>
             </div>
         )
     }
