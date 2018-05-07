@@ -21,7 +21,7 @@ class EditNewsletter extends Component {
     }
 
     handleFormSubmit({title, body}) {
-
+        this.props.saveNewsletterEdit({title, body}, this.props.match.params._id)
     }
 
     render() {
@@ -32,7 +32,8 @@ class EditNewsletter extends Component {
                 <Field name="title" component={this.renderInput} type="text" />
                 <Field name="body" component={this.renderInput} type="textarea" />
 
-                <Link to="/newsletter"><button className="btn btn-primary btn-block">Save</button></Link>
+
+                <button className="btn btn-primary btn-block">Save</button>
                 <Link to="/newsletter"><button className="btn btn-danger btn-block">Cancel</button></Link>
             </form>
         )
