@@ -23,7 +23,7 @@ export function signinUser({email, password}) {
     }
 }
 
-export function fetchNewsletterArchive() {
+export function fetchNewsletterArchive(callback) {
     return function(dispatch) {
         axios.get(`${ROOT_URL}/newsletterArchive`, {
             headers: { authorization: localStorage.getItem('token')}
@@ -33,17 +33,20 @@ export function fetchNewsletterArchive() {
                     type: FETCH_NEWSLETTER_ARCHIVE,
                     payload: response.data
                 })
+                if (callback) {callback() }
             })
     }
 }
 
-export function saveNewsletterEdit({title, body}, _id) {
+export function saveNewsletterEdit({title, body}, _id, callback) {
     return function(dispatch) {
         axios.put(`${ROOT_URL}/newsletter/edit/${_id}`, {title, body}, {
             headers: { authorization: localStorage.getItem('token')}
         })
             .then(response => {
-                
+                dispatch(fetchNewsletterArchive(() => {
+                    callback()
+                }))
             })
     }
 }
