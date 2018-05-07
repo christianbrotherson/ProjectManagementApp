@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import { Link } from 'react-router-dom';
 
 class NewsletterDetail extends Component {
 
@@ -36,6 +37,9 @@ class NewsletterDetail extends Component {
                 <div className="col-md-9">
                     {this.renderFetchedItem()}
                 </div>
+                <Link to={`/newsletter/edit/${this.props.fetchedItem._id}`}>
+                    <div>Edit Newsletter</div>
+                </Link>
             </div>
         )
     }
