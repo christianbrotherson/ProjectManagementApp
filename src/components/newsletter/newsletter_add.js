@@ -1,30 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
-import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
-class EditNewsletter extends Component {
+class AddNewsletter extends Component {
 
-    componentDidMount() {
-        this.props.fetchNewsletterById(this.props.match.params._id)
-    }
-    
-    
     renderInput(field) {
         return (
             <div>
                 <label htmlFor={field.input.name}>{field.input.name}</label>
-                <input className="form-control" {...field.input}/>
+                <input className="form-control" {...field.input} />
             </div>
         )
     }
 
-    handleFormSubmit({title, body}) {
-        this.props.saveNewsletterEdit({title, body}, this.props.match.params._id, () => {
-            this.props.history.push('/newsletter');
-        })
-        
+    handleFormSubmit({ title, body }) {
+        // this.props.saveNewsletterEdit({ title, body }, this.props.match.params._id, () => {
+        //     this.props.history.push('/newsletter');
+        // })
+
     }
 
     render() {
@@ -44,15 +38,13 @@ class EditNewsletter extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return { initialValues: state.newsletter.fetchedItem }
-}
 
-EditNewsletter = reduxForm(
+
+AddNewsletter = reduxForm(
     {
-        form: 'editNewsletter',
-        enableReinitialize: true
-    }
-)(EditNewsletter)
+        form: 'addNewsletter',
 
-export default connect(mapStateToProps, actions)(EditNewsletter);
+    }
+)(AddNewsletter);
+
+export default AddNewsletter;
