@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
+import SupportRequestItem from './supportRequest_item';
+
 class SupportRequestContent extends Component {
 
     render() {
@@ -10,7 +12,7 @@ class SupportRequestContent extends Component {
                 <ul>
                     {
                         this.props.supportRequests.map((object, index) => {
-                            return <div key={index}>{object.title}</div>
+                            return <SupportRequestItem {...object} key={index}/>
                         })
                     }
                 </ul>
