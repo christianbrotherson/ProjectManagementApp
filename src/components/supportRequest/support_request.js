@@ -6,6 +6,11 @@ import * as actions from '../../actions'
 
 class SupportRequest extends Component {
 
+    componentDidMount() {
+        this.props.fetchSupportRequests();
+    }
+    
+
     render() {
         return (
             <div >

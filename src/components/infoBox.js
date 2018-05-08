@@ -5,8 +5,6 @@ import * as actions from '../actions';
 class InfoBox extends Component {
 
     handleSelected() {
-        console.log('trying to handle selected info box');
-        
         this.props.selectRequestType(this.props.type)
     }
 
