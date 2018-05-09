@@ -7,7 +7,7 @@ import * as actions from '../../actions';
 class EditSupportRequest extends Component {
 
     componentDidMount() {
-        // this.props.fetchSupportRequestById(this.props.match.params._id)
+        this.props.fetchSupportRequestById(this.props.match.params._id)
     }
 
 
