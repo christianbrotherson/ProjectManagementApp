@@ -31,9 +31,10 @@ class EditSupportRequest extends Component {
 
         return (
             <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-                <Field name="Service Request Title" component={this.renderInput} type="text" />
-                <Field name="Description" component={this.renderInput} type="textarea" />
-                {/* <img src={this.props.initialValues.imageUrl}/> */}
+                <Field name="title" component={this.renderInput} type="text" />
+                <Field name="body" component={this.renderInput} type="textarea" />
+                <img src={this.props.initialValues.imageUrl} alt="support request image attachment"/>
+                <br/>
 
 
                 <button className="btn btn-primary">Save</button>
@@ -45,13 +46,12 @@ class EditSupportRequest extends Component {
 }
 
 function mapStateToProps(state) {
-    // return { initialValues: state.newsletter.fetchedItem }
-    return { state }
+    return { initialValues: state.supportRequest.fetchedItem }
 }
 
 EditSupportRequest = reduxForm(
     {
-        form: 'EditSupportRequest',
+        form: 'editSupportRequest',
         enableReinitialize: true
     }
 )(EditSupportRequest)

@@ -24,7 +24,6 @@ import EditNewsletter from './components/newsletter/newsletter_edit';
 import AddNewsletter from './components/newsletter/newsletter_add';
 
 import SupportRequest from './components/supportRequest/supportRequest';
-import SupportRequestDetail from './components/supportRequest/supportRequest_detail';
 import EditSupportRequest from './components/supportRequest/supportRequest_edit';
 import AddSupportRequest from './components/supportRequest/supportRequest_add';
 
@@ -44,7 +43,6 @@ function main() {
                         <Route path="/newsletter/add" component={AddNewsletter}></Route>
 
                         <Route path="/support-request" exact component={SupportRequest}></Route>
-                        <Route path="/support-request/detail/:_id" component={SupportRequestDetail}></Route>
                         <Route path="/support-request/edit/:_id" component={EditSupportRequest}></Route>
                         <Route path="/support-request/add" component={AddSupportRequest}></Route>
                         

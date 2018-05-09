@@ -7,7 +7,7 @@ import {
 const INITIAL_STATE = {
     selected: 'pending',
     supportRequests: [],
-    fetchedItem: {}
+    fetchedItem: {},
 }
 
 export default function (state = INITIAL_STATE, action) {
