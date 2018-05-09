@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 class Header extends Component {
     render() {
         return (
-            <div>
-            <h1>Header</h1>
-            {this.props.children}
+            <div className="main-header">
+                <h1>Welcome To The HOA Manager!</h1>
+                <p>Please login to continue</p>
+                {this.props.children}
             </div>
         );
     }

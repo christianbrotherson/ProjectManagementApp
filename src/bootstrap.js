@@ -33,7 +33,7 @@ function main() {
             <Router history={history}>
                 <Header>
                     <Switch>
-
+                        <Route path="/" exact component={Signin}></Route>
                         <Route path="/signin" component={Signin}></Route>
                         <Route path="/signup" component={Signup}></Route>
 
