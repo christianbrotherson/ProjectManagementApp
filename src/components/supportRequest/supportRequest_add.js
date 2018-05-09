@@ -1,14 +1,51 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Field, reduxForm } from 'redux-form';
+import * as actions from '../../actions';
+import { connect } from 'react-redux';
 
 class AddSupportRequest extends Component {
-    state = {}
-    render() {
+
+    renderInput(field) {
         return (
             <div>
-                support request add
+                <label htmlFor={field.input.name}>{field.input.name}</label>
+                <input className="form-control" {...field.input} />
             </div>
-        );
+        )
+    }
+
+    handleFormSubmit({ title, body }) {
+        // this.props.saveNewNewsletter({ title, body }, () => {
+        //     this.props.history.push('/newsletter');
+        // })
+
+    }
+
+    render() {
+        const { handleSubmit } = this.props;
+
+        return (
+            <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+                <Field name="title" component={this.renderInput} type="text" />
+                <Field name="body" component={this.renderInput} type="textarea" />
+
+
+                <button className="btn btn-primary">Save</button>
+                <Link to="/support-request"><button className="btn btn-danger">Cancel</button></Link>
+            </form>
+        )
+
     }
 }
 
-export default AddSupportRequest;
+
+
+AddSupportRequest = reduxForm(
+    {
+        form: 'addSupportRequest',
+
+    }
+)(AddSupportRequest);
+
+export default connect(null, actions)(AddSupportRequest);
