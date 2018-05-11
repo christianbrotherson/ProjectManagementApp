@@ -1,5 +1,6 @@
 @import './header';
 @import './addHeaderBorder';
+@import './addTitle';
 
 ul {
     margin: 0;
@@ -15,4 +16,5 @@ ul {
 
 body {
     margin: 39px 140px;
+    font-family: "Encode Sans";
 }
