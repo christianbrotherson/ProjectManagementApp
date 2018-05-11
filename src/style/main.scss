@@ -1,4 +1,5 @@
 @import './header';
+@import './addHeaderBorder';
 
 ul {
     margin: 0;
@@ -10,4 +11,8 @@ ul {
     height: 250px;
     border: 1px solid #BA0000;
     margin: 25px;
+}
+
+body {
+    margin: 39px 140px;
 }
