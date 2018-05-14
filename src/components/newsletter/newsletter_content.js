@@ -6,8 +6,8 @@ class NewsletterContent extends Component {
     renderItem() {
         if (this.props.latestItem) {
             return (
-                <div>
-                    <div>
+                <div className="newsletter-content">
+                    <div className="image-container">
                         <img src={this.props.latestItem.imageUrl}/>
                         <h2>{this.props.latestItem.title}</h2>
                     </div>
@@ -15,10 +15,10 @@ class NewsletterContent extends Component {
                         {this.props.latestItem.body}
                     </p>
                     <Link to={`/newsletter/edit/${this.props.latestItem._id}`}>
-                        <div>Edit Newsletter</div>
+                        <span>Edit Newsletter</span>
                     </Link>
                     <Link to={`/newsletter/add`}>
-                        <div>Add Newsletter</div>
+                        <span>Add Newsletter</span>
                     </Link>
                 </div>
             )
