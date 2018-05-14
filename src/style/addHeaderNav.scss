@@ -2,6 +2,9 @@
 
     display: flex;
     justify-content: center;
+    margin-bottom: 47px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 13px;
 
     .add-nav-selected {
         border-bottom: 2px solid $color-red;
