@@ -3,6 +3,11 @@
     display: flex;
     justify-content: center;
 
+    .add-nav-selected {
+        border-bottom: 2px solid $color-red;
+        color: $color-red;
+    }
+
     a {
         text-decoration: none;
     }

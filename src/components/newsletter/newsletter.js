@@ -39,6 +39,6 @@ function mapStateToProps(state) {
     }
 }
 
-Newsletter = addHeaderNav(Newsletter)
+Newsletter = addHeaderNav(Newsletter, 'newsletter')
 
 export default connect(mapStateToProps, actions)(Newsletter);
