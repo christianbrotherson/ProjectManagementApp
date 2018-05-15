@@ -5,6 +5,7 @@ $color-gray-two: #E6E6E6;
 ul {
     margin: 0;
     padding: 0;
+    list-style-type: none;
 }
 
 body {
@@ -19,4 +20,5 @@ body {
 @import './addTitle';
 @import './signin';
 @import './newsletter_content.scss';
+@import './newsletter_archive.scss';
 @import './infoBox.scss';

@@ -13,9 +13,11 @@ class NewsletterArchive extends Component {
     renderNewsletterArchiveItem(item, index) {
         return (
             <li key={index} className="archive-item">
-                <div className="archive-item-title">
-                    <Link to={`/newsletter/detail/${item._id}`}>{item.title}</Link>
-                </div>
+                <Link className="archive-link-wrapper" to={`/newsletter/detail/${item._id}`}>
+                    <div className="archive-item-title">
+                        {item.title}
+                    </div>
+                </Link>
                 <div className="archive-item-date">{item.date}</div>
             </li>
         )

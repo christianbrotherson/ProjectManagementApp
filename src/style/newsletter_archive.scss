@@ -1,16 +1,42 @@
 .newsletter-archive {
-    .archive-title {
+    margin-top: 38.5px;
 
+    .archive-title {
+        color: $color-red;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 23px;
+        border-bottom: 1px solid $color-gray-two;
+        padding-bottom: 4px;
     }
 
     ul {
+        
         .archive-item {
-            .archive-item-title {
+            margin-top: 16px;
 
+            .archive-link-wrapper {
+                text-decoration: none;
+            }
+
+            .archive-item-title {
+                color: $color-gray-one;
+                font-size: 14px;
+                line-height: 17px;
+                transition: all .15s ease-in-out;
+                text-decoration-color: $color-gray-one;
+
+                &:hover {
+                    transform: scale(1.01);
+                    font-weight: bold;
+                }
             }
 
             .archive-item-date {
-                
+                color: $color-red;
+                font-family: "Encode Sans Condensed";
+                font-size: 13px;
+                line-height: 16px;
             }
         }
 
