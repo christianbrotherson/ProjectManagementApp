@@ -4,6 +4,9 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
+import addHeaderBorder from '../HOC/addHeaderBorder';
+import addTitle from '../HOC/addTitle';
+
 class EditNewsletter extends Component {
 
     componentDidMount() {
@@ -31,13 +34,25 @@ class EditNewsletter extends Component {
         const { handleSubmit } = this.props;
 
         return (
-            <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-                <Field name="title" component={this.renderInput} type="text" />
-                <Field name="body" component={this.renderInput} type="textarea" />
+            <form className="add-newsletter-form" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+                <div className="add-newsletter-form-title">
+                    <label htmlFor="title">Newsletter Title</label>
+                    <Field name="title" component={(field) => <input {...field.input} />} type="text" />
+                </div>
+                <div className="add-newsletter-form-body">
+                    <label htmlFor="body">Body</label>
+                    <Field name="body" component={(field) => <textarea {...field.input} />} type="textarea" />
+                </div>
 
+                <Link to="/newsletter">
+                    <div className="add-newsletter-form-cancel">
+                        <p>Cancel</p>
+                    </div>
+                </Link>
 
-                <button className="btn btn-primary">Save</button>
-                <Link to="/newsletter"><button className="btn btn-danger">Cancel</button></Link>
+                <button className="add-newsletter-form-submit" action="submit">
+                    <p>Submit</p>
+                </button>
             </form>
         )
 
@@ -54,5 +69,8 @@ EditNewsletter = reduxForm(
         enableReinitialize: true
     }
 )(EditNewsletter)
+
+EditNewsletter = addTitle(EditNewsletter, 'Edit Newsletter');
+EditNewsletter = addHeaderBorder(EditNewsletter);
 
 export default connect(mapStateToProps, actions)(EditNewsletter);

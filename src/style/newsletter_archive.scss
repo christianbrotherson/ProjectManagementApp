@@ -17,20 +17,21 @@
 
             .archive-link-wrapper {
                 text-decoration: none;
-            }
-
-            .archive-item-title {
-                color: $color-gray-one;
-                font-size: 14px;
-                line-height: 17px;
-                transition: all .15s ease-in-out;
-                text-decoration-color: $color-gray-one;
-
-                &:hover {
-                    transform: scale(1.01);
-                    font-weight: bold;
+                
+                .archive-item-title {
+                    color: $color-gray-one;
+                    font-size: 14px;
+                    line-height: 17px;
+                    transition: all .15s ease-in-out;
+                    text-decoration-color: $color-gray-one;
+    
+                    &:hover {
+                        transform: scale(1.01);
+                        font-weight: bold;
+                    }
                 }
             }
+
 
             .archive-item-date {
                 color: $color-red;
