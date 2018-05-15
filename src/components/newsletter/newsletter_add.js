@@ -9,15 +9,6 @@ import addTitle from '../HOC/addTitle';
 
 class AddNewsletter extends Component {
 
-    renderInput(field) {
-        return (
-            <div>
-                <label htmlFor={field.input.name}>{field.input.name}</label>
-                <input {...field.input} />
-            </div>
-        )
-    }
-
     handleFormSubmit({ title, body }) {
         this.props.saveNewNewsletter({ title, body }, () => {
             this.props.history.push('/newsletter');
@@ -29,13 +20,20 @@ class AddNewsletter extends Component {
         const { handleSubmit } = this.props;
 
         return (
-            <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-                <Field name="title" component={this.renderInput} type="text" />
-                <Field name="body" component={this.renderInput} type="textarea" />
-
+            <form className="add-newsletter-form" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+                <div className="add-newsletter-form-title">
+                    <label htmlFor="title">Newsletter Title</label>
+                    <Field name="title" component={(field) => <input {...field.input} />} type="text" />
+                </div>
+                <div className="add-newsletter-form-body">
+                    <label htmlFor="body">Body</label>
+                    <Field name="body" component={(field) => <textarea {...field.input} />} type="textarea" />
+                </div>
+                <div>
+                    <Link to="/newsletter">Cancel</Link>
+                </div>
 
                 <button action="submit">Submit</button>
-                <Link to="/newsletter">Cancel</Link>
             </form>
         )
 

@@ -1,6 +1,11 @@
+textarea {
+    min-height: 355px;
+    resize: none;
+}
+
 form {
 
-    width: 629px;
+    min-width: 629px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -17,7 +22,7 @@ form {
             line-height: 23px;
         }
 
-        input {
+        input, textarea {
             width: 500px;
             border: 1px solid $color-gray-two;
             border-radius: 5px;
@@ -44,5 +49,31 @@ form {
         font-weight: bold;
         line-height: 28px;
         text-align: center;
+    }
+}
+
+.add-newsletter-form {
+    width: 100%;
+
+    .add-newsletter-form-title {
+        margin-top: 41px;
+    }
+    
+    .add-newsletter-form-body {
+        margin-top: 20px;
+        
+    }
+    
+    div {
+        transform: translateX(-64.5px);
+        display: flex;
+        
+        label {
+            width: 260px;
+        }
+
+        input, textarea {
+            width: 760px;
+        }
     }
 }
