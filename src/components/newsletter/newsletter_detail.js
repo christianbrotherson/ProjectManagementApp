@@ -15,8 +15,8 @@ class NewsletterDetail extends Component {
     renderFetchedItem() {
         if (this.props.fetchedItem) {
             return (
-                <div>
-                    <div>
+                <div className="newsletter-content">
+                    <div className="image-container">
                         <img src={this.props.fetchedItem.imageUrl} />
                         <h2>{this.props.fetchedItem.title}</h2>
                     </div>
@@ -31,13 +31,16 @@ class NewsletterDetail extends Component {
     render() {
 
         return (
-            <div className="row">
-                <div className="col-md-3">
-                    <div style={{ width: '200px', height: '200px', backgroundColor: 'skyblue' }}>
-                        02 jan 18
-                    </div>
+            <div className="newsletter-detail">
+                <div className="info-box">
+                    <div className="info-box-text">
+                        02
+                        </div>
+                    <div className="info-box-subtext">
+                        JAN 2018
+                        </div>
                 </div>
-                <div className="col-md-9">
+                <div>
                     {this.renderFetchedItem()}
                     <Link to={`/newsletter/edit/${this.props.fetchedItem._id}`}>
                         <div>Edit Newsletter</div>
