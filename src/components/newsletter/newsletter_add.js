@@ -4,13 +4,16 @@ import { Field, reduxForm } from 'redux-form';
 import * as actions from '../../actions';
 import { connect } from 'react-redux';
 
+import addHeaderBorder from '../HOC/addHeaderBorder';
+import addTitle from '../HOC/addTitle';
+
 class AddNewsletter extends Component {
 
     renderInput(field) {
         return (
             <div>
                 <label htmlFor={field.input.name}>{field.input.name}</label>
-                <input className="form-control" {...field.input} />
+                <input {...field.input} />
             </div>
         )
     }
@@ -31,8 +34,8 @@ class AddNewsletter extends Component {
                 <Field name="body" component={this.renderInput} type="textarea" />
 
 
-                <button className="btn btn-primary">Save</button>
-                <Link to="/newsletter"><button className="btn btn-danger">Cancel</button></Link>
+                <button action="submit">Submit</button>
+                <Link to="/newsletter">Cancel</Link>
             </form>
         )
 
@@ -47,5 +50,8 @@ AddNewsletter = reduxForm(
 
     }
 )(AddNewsletter);
+
+AddNewsletter = addTitle(AddNewsletter, 'New Newsletter');
+AddNewsletter = addHeaderBorder(AddNewsletter);
 
 export default connect(null, actions)(AddNewsletter);
