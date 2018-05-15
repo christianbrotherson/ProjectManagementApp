@@ -11,7 +11,7 @@ form {
         transform: translateX(-64.5px);
         label {
             width: 129px;
-            color: #BA0000;
+            color: $color-red;
             font-size: 18px;
             font-weight: bold;
             line-height: 23px;
@@ -19,7 +19,7 @@ form {
 
         input {
             width: 500px;
-            border: 1px solid #E6E6E6;
+            border: 1px solid $color-gray-two;
             border-radius: 5px;
         }
     }
@@ -37,7 +37,7 @@ form {
         height: 40px;
         width: 216.67px;
         border-radius: 20px;
-        background-color: #BA0000;
+        background-color: $color-red;
 
         color: #FFFFFF;
         font-size: 22px;

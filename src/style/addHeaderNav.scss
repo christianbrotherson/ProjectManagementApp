@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 47px;
-    border-bottom: 1px solid #e6e6e6;
+    border-bottom: 1px solid $color-gray-two;
     padding-bottom: 13px;
 
     .add-nav-selected {
@@ -24,7 +24,7 @@
             color: $color-red;
         }
         margin: 0 23px;
-        color: #4D4D4D;
+        color: $color-gray-one;
         font-size: 16px;
         font-weight: bold;
         line-height: 20px;
